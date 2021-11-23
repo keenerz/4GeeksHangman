@@ -1,11 +1,12 @@
 /* eslint-disable */
-window.onload = function() {
+window.onload = function() {};
+
+function play() {
   let words = ["pokemon"];
   let wordsIndex = Math.floor(Math.random() * words.length);
-
   let output = words[wordsIndex].split("");
-
   let blanks = [];
+  let solutionSoFar;
 
   for (let i = 0; i <= output.length; i++) {
     let blankinput = blanks.push("_");
@@ -18,26 +19,40 @@ window.onload = function() {
     if (answer == output[wordsIndex]) {
       blanks[wordsIndex] = answer;
       console.log(blanks);
-    } else if (answer != output[wordsIndex] && x == 0) {
+    } else if (answer != output[wordsIndex] && count == 0) {
       console.log(" O");
       count++;
-    } else if (answer != output[wordsIndex] && x == 1) {
+    } else if (answer != output[wordsIndex] && count == 1) {
       console.log(" O", "\n", "|");
       count++;
-    } else if (answer != output[wordsIndex] && x == 2) {
+    } else if (answer != output[wordsIndex] && count == 2) {
       console.log("  O", "\n", "-|");
       count++;
-    } else if (answer != output[wordsIndex] && x == 3) {
+    } else if (answer != output[wordsIndex] && count == 3) {
       console.log("  O", "\n", "-|-");
       count++;
-    } else if (answer != output[wordsIndex] && x == 4) {
+    } else if (answer != output[wordsIndex] && count == 4) {
       console.log("  O", "\n", "-|-", "\n", " /");
       count++;
-    } else if (answer != output[wordsIndex] && x == 5) {
+    } else if (answer != output[wordsIndex] && count == 5) {
       console.log("  O", "\n", "-|-", "\n", " /\\");
       console.log("Game Over");
-      break;
+      playAgainDialogue();
+      return;
     }
   }
   console.log(count);
-};
+}
+function displayBoard() {
+  console.log(solutionSoFar.join(" "));
+}
+
+function playAgainDialogue() {
+  if (confirm("Play again?")) {
+    console.log("");
+    play();
+  }
+  console.log("Bye!");
+}
+
+document.getElementById("play").addEventListener("click", play);
