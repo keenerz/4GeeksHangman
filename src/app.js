@@ -20,19 +20,19 @@ window.onload = function() {
       console.log(blanks);
     } else if (answer != output[wordsIndex] && x == 0) {
       console.log(" O");
-      count + 1;
+      count++;
     } else if (answer != output[wordsIndex] && x == 1) {
       console.log(" O", "\n", "|");
-      count + 1;
+      count++;
     } else if (answer != output[wordsIndex] && x == 2) {
       console.log("  O", "\n", "-|");
-      count + 1;
+      count++;
     } else if (answer != output[wordsIndex] && x == 3) {
       console.log("  O", "\n", "-|-");
-      count + 1;
+      count++;
     } else if (answer != output[wordsIndex] && x == 4) {
       console.log("  O", "\n", "-|-", "\n", " /");
-      count + 1;
+      count++;
     } else if (answer != output[wordsIndex] && x == 5) {
       console.log("  O", "\n", "-|-", "\n", " /\\");
       console.log("Game Over");
