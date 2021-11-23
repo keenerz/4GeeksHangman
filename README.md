@@ -50,3 +50,18 @@ $ npm run deploy
 ```
 
 Very easy and in just one step!  Push to your __master__ branch and use the free hosting that comes with [GitHub pages](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/#enabling-github-pages-to-publish-your-site-from-master-or-gh-pages), the project is ready to be published. Remember to choose to run the Github Page from your master branch.
+
+
+
+HangMan Game Rules:
+Hangman game
+ 1. game automatically selects a word from list for game
+2. game displays a line for each letter in selected word
+3. game asks user to guess a letter or full word
+4. game keeps track of guessed letters (both right and wrong)
+5. if guessed letter exists in selected word then game replaces that word in corresponding line
+6. if guessed letter does not exist in selected word then a point is taken from available number of guesses
+6.1 if user guesses full word correctly then user wins
+6.2 if user guesses full word incorrectly then user loses
+6.3 when user runs out of guesses game is over
+7. when game is over user can decide to play again or leave
